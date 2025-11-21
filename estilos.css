@@ -17,6 +17,7 @@ main{
     margin: 100px auto 0px;
     border-radius: 10px;
     padding: 40px;
+    width: 85%;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.432);
 }
 
@@ -63,4 +64,8 @@ button:hover{
     background-color: transparent;
     box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.212);
 
+}
+
+header img{
+width: 100%;
 }
