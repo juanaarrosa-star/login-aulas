@@ -37,6 +37,16 @@ h1 {
     font-weight: bold;
 }
 
+.ayuda {
+    font-size: 13px;
+    color: #8a6a60;
+    margin-top: -5px;
+}
+
+#btnVaciar {
+    background-color: #eee;
+}
+
 input {
     padding: 8px;
     border-radius: 5px;

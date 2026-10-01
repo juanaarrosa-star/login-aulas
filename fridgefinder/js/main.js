@@ -7,6 +7,7 @@ const inpIngrediente = document.querySelector("#ingrediente")
 const btnAgregarIngrediente = document.querySelector("#btnAgregarIngrediente")
 const divChips = document.querySelector("#chips")
 const btnBuscar = document.querySelector("#btnBuscar")
+const btnVaciar = document.querySelector("#btnVaciar")
 const pMensaje = document.querySelector("#mensaje")
 const divResultados = document.querySelector("#resultados")
 
@@ -40,6 +41,14 @@ divChips.addEventListener("click", (evento) => {
     const indice = Number(evento.target.dataset.indice)
     ingredientesIngresados = ingredientesIngresados.filter((ingrediente, i) => i !== indice)
     renderChips(divChips, ingredientesIngresados)
+})
+
+// Vacía la lista de ingredientes y los resultados, para arrancar de cero.
+btnVaciar.addEventListener("click", () => {
+    ingredientesIngresados = []
+    renderChips(divChips, ingredientesIngresados)
+    renderListado(divResultados, [])
+    mensaje(pMensaje, "")
 })
 
 btnBuscar.addEventListener("click", async () => {
