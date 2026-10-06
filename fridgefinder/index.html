@@ -8,6 +8,28 @@
 </head>
 <body>
 
+    <!-- Encabezado: botón de menú hamburguesa + logo -->
+    <header id="headerApp">
+        <button id="btnMenu"><img src="img/menu.png" alt="Menú" class="iconoBoton"></button>
+        <img src="img/logo.png" alt="FridgeFinder" id="logoApp">
+    </header>
+
+    <!-- Menú hamburguesa: oculto hasta que se abre con btnMenu -->
+    <nav id="menuHamburguesa" style="display: none;">
+        <button class="itemMenu" data-destino="perfil">
+            <img src="img/user.png" class="iconoMenu" alt=""> Mi perfil
+        </button>
+        <button class="itemMenu" data-destino="guardadas">
+            <img src="img/guardado.png" class="iconoMenu" alt=""> Recetas guardadas
+        </button>
+        <button class="itemMenu" data-destino="ayuda">
+            <img src="img/help.png" class="iconoMenu" alt=""> Ayuda
+        </button>
+        <button class="itemMenu" data-destino="ajustes">
+            <img src="img/ajustes.png" class="iconoMenu" alt=""> Ajustes
+        </button>
+    </nav>
+
     <!-- Pantalla 1: búsqueda y listado -->
     <div id="busqueda">
         <h1>FridgeFinder</h1>
@@ -24,14 +46,63 @@
 
         <p id="mensaje"></p>
 
+        <div id="filtroPais">
+            <input id="inputPais" type="text" placeholder="Filtrar por país (ej: Spanish, Mexican, Italian)">
+            <button id="btnFiltrarPais">Filtrar</button>
+        </div>
+        <p class="ayuda">El país también es en inglés (ej: Spanish, Mexican, Italian) — no importa si lo escribís en mayúsculas o minúsculas.</p>
+
+        <div id="opcionesListado">
+            <label for="selectTamanioPagina">Mostrar</label>
+            <select id="selectTamanioPagina">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+            </select>
+            <span>recetas por página</span>
+        </div>
+
         <h2>Resultados</h2>
         <div id="resultados"></div>
+        <div id="paginacion"></div>
     </div>
 
-    <!-- Pantalla 2: detalle de una receta (oculta hasta que se elige una) -->
+    <!-- Pantalla 2: detalle de una receta -->
     <div id="detalle" style="display: none;">
-        <button id="btnVolver">← volver</button>
+        <button class="btnVolverMenu" data-destino="busqueda">← volver</button>
         <div id="detalleContenido"></div>
+    </div>
+
+    <!-- Pantalla 3: recetas guardadas (funcional) -->
+    <div id="guardadas" style="display: none;">
+        <button class="btnVolverMenu" data-destino="busqueda">← volver</button>
+        <h1>Recetas guardadas</h1>
+        <div id="listaGuardadas"></div>
+    </div>
+
+    <!-- Pantalla 4: mi perfil (ficticia, no hace nada todavía) -->
+    <div id="perfil" style="display: none;">
+        <button class="btnVolverMenu" data-destino="busqueda">← volver</button>
+        <h1>Mi perfil</h1>
+        <img src="img/user.png" class="iconoGrande" alt="">
+        <p>Esta sección es solo una muestra de cómo quedaría — todavía no hace nada.</p>
+    </div>
+
+    <!-- Pantalla 5: ayuda (ficticia, no hace nada todavía) -->
+    <div id="ayuda" style="display: none;">
+        <button class="btnVolverMenu" data-destino="busqueda">← volver</button>
+        <h1>Ayuda</h1>
+        <img src="img/help.png" class="iconoGrande" alt="">
+        <p>Esta sección es solo una muestra de cómo quedaría — todavía no hace nada.</p>
+    </div>
+
+    <!-- Pantalla 6: ajustes (ficticia, no hace nada todavía) -->
+    <div id="ajustes" style="display: none;">
+        <button class="btnVolverMenu" data-destino="busqueda">← volver</button>
+        <h1>Ajustes</h1>
+        <img src="img/ajustes.png" class="iconoGrande" alt="">
+        <p>Esta sección es solo una muestra de cómo quedaría — todavía no hace nada.</p>
     </div>
 
     <script type="module" src="./js/main.js"></script>

@@ -11,6 +11,71 @@ body {
     color: #5a2a27;
 }
 
+#headerApp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#btnMenu {
+    background: none;
+    padding: 5px;
+    margin-left: 0;
+}
+
+.iconoBoton {
+    width: 28px;
+    height: 28px;
+}
+
+#logoApp {
+    height: 36px;
+}
+
+#menuHamburguesa {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.itemMenu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 8px 5px;
+    margin: 0;
+    color: #5a2a27;
+    font-size: 15px;
+}
+
+.iconoMenu {
+    width: 22px;
+    height: 22px;
+}
+
+.iconoGrande {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin: 10px 0;
+}
+
+.btnVolverMenu {
+    background-color: #eee;
+    margin-bottom: 15px;
+}
+
 h1 {
     color: #7a9a4a;
 }
@@ -90,6 +155,47 @@ button {
     height: 60px;
     border-radius: 8px;
     object-fit: cover;
+}
+
+.card h3 {
+    flex: 1;
+}
+
+.btnGuardar {
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.iconoGuardar {
+    width: 26px;
+    height: 26px;
+}
+
+#filtroPais {
+    margin-top: 15px;
+    display: flex;
+    gap: 5px;
+}
+
+#filtroPais input {
+    flex: 1;
+}
+
+#opcionesListado {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#paginacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
 }
 
 #detalleContenido img {

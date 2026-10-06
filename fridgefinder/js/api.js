@@ -59,6 +59,42 @@ export async function buscarRecetasPorIngredientes(ingredientes) {
     return ordenadas.map(item => item.receta)
 }
 
+// --- buscar recetas por país de origen (ej: "Spanish", "Mexican", "Italian") ---
+// TheMealDB guarda el país en inglés, con la primera letra en mayúscula
+// (ej: "Spanish", no "España"). Para que no importe cómo lo escriba el
+// usuario (ESPAÑOL, español, Español...), lo normalizamos nosotros antes
+// de mandarlo a la API.
+export async function obtenerRecetasPorPais(pais) {
+    const paisNormalizado = capitalizarPrimeraLetra(pais)
+    const respuesta = await fetch(`${BASE_URL}/filter.php?a=${paisNormalizado}`)
+    if (!respuesta.ok) {
+        throw new Error("No pudimos buscar recetas por país")
+    }
+
+    const datos = await respuesta.json()
+
+    if (datos.meals === null) {
+        return []
+    }
+
+    return datos.meals.map(meal => {
+        return {
+            id: meal.idMeal,
+            nombre: meal.strMeal,
+            imagen: meal.strMealThumb
+        }
+    })
+}
+
+// Convierte "ESPAÑOL", "español" o "Español" siempre en "Español"
+// (primera letra mayúscula, el resto minúscula). No se exporta: es un
+// detalle interno de cómo armamos el pedido a la API.
+function capitalizarPrimeraLetra(texto) {
+    const primeraLetra = texto.charAt(0).toUpperCase()
+    const restoLetras = texto.slice(1).toLowerCase()
+    return primeraLetra + restoLetras
+}
+
 // --- detalle completo de una receta, por id ---
 export async function obtenerRecetaCompleta(id) {
     const respuesta = await fetch(`${BASE_URL}/lookup.php?i=${id}`)
@@ -70,6 +106,7 @@ export async function obtenerRecetaCompleta(id) {
     const meal = datos.meals[0]
 
     return {
+        id: meal.idMeal,
         nombre: meal.strMeal,
         imagen: meal.strMealThumb,
         categoria: meal.strCategory,
