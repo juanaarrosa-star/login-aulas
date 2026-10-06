@@ -72,6 +72,12 @@ body {
     height: 22px;
 }
 
+.iconoFlecha {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+}
+
 .iconoGrande {
     width: 70px;
     height: 70px;

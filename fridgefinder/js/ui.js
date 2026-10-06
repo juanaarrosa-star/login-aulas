@@ -51,19 +51,15 @@ export function renderListado(contenedor, recetas, idsGuardados) {
     })
 }
 
-// Flechas dibujadas con SVG (en vez de usar el caracter "←"/"→").
-const flechaIzquierda = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>'
-const flechaDerecha = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>'
-
 // Dibuja los botones de paginación: Anterior / Página X de Y / Siguiente.
 export function renderPaginacion(contenedor, paginaActual, totalPaginas) {
     const deshabilitarAnterior = paginaActual <= 1 ? "disabled" : ""
     const deshabilitarSiguiente = paginaActual >= totalPaginas ? "disabled" : ""
 
     contenedor.innerHTML = `
-        <button id="btnPaginaAnterior" ${deshabilitarAnterior}>${flechaIzquierda} Anterior</button>
+        <button id="btnPaginaAnterior" ${deshabilitarAnterior}><img src="img/flecha-izquierda.png" class="iconoFlecha" alt=""> Anterior</button>
         <span>Página ${paginaActual} de ${totalPaginas}</span>
-        <button id="btnPaginaSiguiente" ${deshabilitarSiguiente}>Siguiente ${flechaDerecha}</button>`
+        <button id="btnPaginaSiguiente" ${deshabilitarSiguiente}>Siguiente <img src="img/flecha-derecha.png" class="iconoFlecha" alt=""></button>`
 }
 
 // Dibuja el detalle completo de una receta, con su botón de guardar.
