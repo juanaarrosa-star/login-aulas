@@ -3,6 +3,7 @@ import { buscarRecetasPorIngredientes, obtenerRecetaCompleta, obtenerRecetasPorP
 import { mostrar, ocultar, mensaje, renderChips, renderListado, renderPaginacion, renderDetalle } from "./ui.js"
 
 const btnMenu = document.querySelector("#btnMenu")
+const btnLogo = document.querySelector("#btnLogo")
 const menuHamburguesa = document.querySelector("#menuHamburguesa")
 
 const divBusqueda = document.querySelector("#busqueda")
@@ -194,6 +195,12 @@ btnMenu.addEventListener("click", () => {
     } else {
         mostrar(menuHamburguesa)
     }
+})
+
+// El logo funciona como "volver al inicio" desde cualquier pantalla.
+btnLogo.addEventListener("click", () => {
+    mostrarPantalla("busqueda")
+    ocultar(menuHamburguesa)
 })
 
 menuHamburguesa.addEventListener("click", (evento) => {

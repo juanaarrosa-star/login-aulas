@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FridgeFinder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
     <!-- Encabezado: botón de menú hamburguesa + logo -->
     <header id="headerApp">
-        <button id="btnMenu"><img src="img/menu.png" alt="Menú" class="iconoBoton"></button>
-        <img src="img/logo.png" alt="FridgeFinder" id="logoApp">
+        <button id="btnMenu" class="btnIcono"><img src="img/menu.png" alt="Menú" class="iconoBoton"></button>
+        <button id="btnLogo" class="btnIcono">
+            <img src="img/logo.png" alt="FridgeFinder — volver al inicio" id="logoApp">
+        </button>
     </header>
 
     <!-- Menú hamburguesa: oculto hasta que se abre con btnMenu -->
@@ -32,14 +37,13 @@
 
     <!-- Pantalla 1: búsqueda y listado -->
     <div id="busqueda">
-        <h1>FridgeFinder</h1>
         <p>¿Qué tenés en la heladera?</p>
 
         <div id="chips"></div>
 
         <input id="ingrediente" type="text" placeholder="Ej: chicken, tomato, onion">
         <button id="btnAgregarIngrediente">Agregar</button>
-        <p class="ayuda">Escribí el ingrediente en inglés — TheMealDB solo entiende nombres en inglés (ej: chicken, tomato, cheese, onion).</p>
+        <p class="ayuda">Escribilo en inglés (ej: chicken, tomato, cheese).</p>
 
         <button id="btnBuscar">Buscar recetas</button>
         <button id="btnVaciar">Vaciar todo</button>
@@ -50,7 +54,7 @@
             <input id="inputPais" type="text" placeholder="Filtrar por país (ej: Spanish, Mexican, Italian)">
             <button id="btnFiltrarPais">Filtrar</button>
         </div>
-        <p class="ayuda">El país también es en inglés (ej: Spanish, Mexican, Italian) — no importa si lo escribís en mayúsculas o minúsculas.</p>
+        <p class="ayuda">También en inglés (ej: Spanish, Mexican, Italian).</p>
 
         <div id="opcionesListado">
             <label for="selectTamanioPagina">Mostrar</label>
@@ -70,20 +74,20 @@
 
     <!-- Pantalla 2: detalle de una receta -->
     <div id="detalle" style="display: none;">
-        <button class="btnVolverMenu" data-destino="busqueda">← volver</button>
+        <button class="btnVolverMenu" data-destino="busqueda"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg> Volver</button>
         <div id="detalleContenido"></div>
     </div>
 
     <!-- Pantalla 3: recetas guardadas (funcional) -->
     <div id="guardadas" style="display: none;">
-        <button class="btnVolverMenu" data-destino="busqueda">← volver</button>
+        <button class="btnVolverMenu" data-destino="busqueda"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg> Volver</button>
         <h1>Recetas guardadas</h1>
         <div id="listaGuardadas"></div>
     </div>
 
     <!-- Pantalla 4: mi perfil (ficticia, no hace nada todavía) -->
     <div id="perfil" style="display: none;">
-        <button class="btnVolverMenu" data-destino="busqueda">← volver</button>
+        <button class="btnVolverMenu" data-destino="busqueda"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg> Volver</button>
         <h1>Mi perfil</h1>
         <img src="img/user.png" class="iconoGrande" alt="">
         <p>Esta sección es solo una muestra de cómo quedaría — todavía no hace nada.</p>
@@ -91,7 +95,7 @@
 
     <!-- Pantalla 5: ayuda (ficticia, no hace nada todavía) -->
     <div id="ayuda" style="display: none;">
-        <button class="btnVolverMenu" data-destino="busqueda">← volver</button>
+        <button class="btnVolverMenu" data-destino="busqueda"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg> Volver</button>
         <h1>Ayuda</h1>
         <img src="img/help.png" class="iconoGrande" alt="">
         <p>Esta sección es solo una muestra de cómo quedaría — todavía no hace nada.</p>
@@ -99,7 +103,7 @@
 
     <!-- Pantalla 6: ajustes (ficticia, no hace nada todavía) -->
     <div id="ajustes" style="display: none;">
-        <button class="btnVolverMenu" data-destino="busqueda">← volver</button>
+        <button class="btnVolverMenu" data-destino="busqueda"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg> Volver</button>
         <h1>Ajustes</h1>
         <img src="img/ajustes.png" class="iconoGrande" alt="">
         <p>Esta sección es solo una muestra de cómo quedaría — todavía no hace nada.</p>

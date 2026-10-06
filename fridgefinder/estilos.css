@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Baloo 2', Arial, sans-serif;
 }
 
 body {
@@ -14,14 +14,21 @@ body {
 #headerApp {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
     margin-bottom: 10px;
 }
 
-#btnMenu {
+.btnIcono {
     background: none;
-    padding: 5px;
+    padding: 6px;
     margin-left: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.btnIcono:hover {
+    background-color: rgba(122, 154, 74, 0.15);
 }
 
 .iconoBoton {
@@ -30,7 +37,7 @@ body {
 }
 
 #logoApp {
-    height: 36px;
+    height: 40px;
 }
 
 #menuHamburguesa {
@@ -53,10 +60,11 @@ body {
     background: none;
     border: none;
     text-align: left;
-    padding: 8px 5px;
+    padding: 8px 10px;
     margin: 0;
     color: #5a2a27;
     font-size: 15px;
+    border-radius: 10px;
 }
 
 .iconoMenu {
@@ -74,10 +82,14 @@ body {
 .btnVolverMenu {
     background-color: #eee;
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
-h1 {
+h1, h2 {
     color: #7a9a4a;
+    font-weight: 700;
 }
 
 #chips {
@@ -105,16 +117,19 @@ h1 {
 .ayuda {
     font-size: 13px;
     color: #8a6a60;
-    margin-top: -5px;
+    margin-top: 6px;
 }
 
 #btnVaciar {
     background-color: #eee;
+    display: block;
+    margin-top: 12px;
+    margin-left: 0;
 }
 
 input {
-    padding: 8px;
-    border-radius: 5px;
+    padding: 8px 12px;
+    border-radius: 20px;
     border: 1px solid #ccc;
 }
 
@@ -124,6 +139,18 @@ button {
     border: none;
     cursor: pointer;
     margin-left: 5px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+#btnAgregarIngrediente:hover,
+#btnVaciar:hover,
+#btnFiltrarPais:hover,
+.btnVolverMenu:hover,
+.itemMenu:hover,
+#btnPaginaAnterior:not(:disabled):hover,
+#btnPaginaSiguiente:not(:disabled):hover {
+    background-color: #7a9a4a;
+    color: white;
 }
 
 #btnBuscar {
@@ -133,6 +160,10 @@ button {
     color: white;
     margin-top: 15px;
     padding: 12px;
+}
+
+#btnBuscar:hover {
+    background-color: #65813c;
 }
 
 #mensaje {
@@ -190,6 +221,19 @@ button {
     gap: 8px;
 }
 
+#selectTamanioPagina {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 2px solid #7a9a4a;
+    background-color: white;
+    color: #5a2a27;
+    cursor: pointer;
+}
+
+#selectTamanioPagina:hover {
+    background-color: #f3ede0;
+}
+
 #paginacion {
     display: flex;
     align-items: center;
@@ -203,7 +247,6 @@ button {
     border-radius: 10px;
 }
 
-#btnVolver {
-    background-color: #eee;
-    margin-bottom: 15px;
+#detalleContenido .btnGuardar {
+    margin: 10px 0;
 }
